@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulador de Orçamento Freelancer</title>
+</head>
+<body>
+    <script src="main.js"></script>
+    <div class="container">
+        <header class="header">
+            <h1>💰 Simulador de Orçamento Freelancer</h1>
+            <p>Calcule quanto cobrar pelos seus projetos de forma profissional</p>
+        </header>
+
+        <main class="main-content">
+            <form id="budgetForm" class="budget-form">
+                <!-- Tipo de Projeto -->
+                <section class="form-section">
+                    <h2>🎯 Tipo de Projeto</h2>
+                    <div class="project-types">
+                        <label class="project-card">
+                            <input type="radio" name="projectType" value="landing" data-multiplier="1">
+                            <div class="card-content">
+                                <h3>🌟 Landing Page</h3>
+                                <p>Página única, institucional</p>
+                                <span class="time-estimate">5-10 horas</span>
+                            </div>
+                        </label>
+                        
+                        <label class="project-card">
+                            <input type="radio" name="projectType" value="website" data-multiplier="2.5">
+                            <div class="card-content">
+                                <h3>🏢 Site Institucional</h3>
+                                <p>Site completo, múltiplas páginas</p>
+                                <span class="time-estimate">20-40 horas</span>
+                            </div>
+                        </label>
+                        
+                        <label class="project-card">
+                            <input type="radio" name="projectType" value="ecommerce" data-multiplier="4">
+                            <div class="card-content">
+                                <h3>🛒 E-commerce</h3>
+                                <p>Loja virtual completa</p>
+                                <span class="time-estimate">60-120 horas</span>
+                            </div>
+                        </label>
+                        
+                        <label class="project-card">
+                            <input type="radio" name="projectType" value="webapp" data-multiplier="6">
+                            <div class="card-content">
+                                <h3>📱 Web App</h3>
+                                <p>Aplicação web complexa</p>
+                                <span class="time-estimate">100-200 horas</span>
+                            </div>
+                        </label>
+                        
+                        <label class="project-card">
+                            <input type="radio" name="projectType" value="mobileapp" data-multiplier="8">
+                            <div class="card-content">
+                                <h3>📲 App Mobile</h3>
+                                <p>Aplicativo nativo/híbrido</p>
+                                <span class="time-estimate">150-300 horas</span>
+                            </div>
+                        </label>
+                    </div>
+                </section>
+
+                <!-- Complexidade -->
+                <section class="form-section">
+                    <h2>⚙️ Nível de Complexidade</h2>
+                    <div class="complexity-options">
+                        <label class="complexity-card">
+                            <input type="radio" name="complexity" value="simple" data-multiplier="0.8">
+                            <div class="card-content">
+                                <h3>🟢 Simples</h3>
+                                <p>Design básico, poucas funcionalidades</p>
+                            </div>
+                        </label>
+                        
+                        <label class="complexity-card">
+                            <input type="radio" name="complexity" value="medium" data-multiplier="1" checked>
+                            <div class="card-content">
+                                <h3>🟡 Médio</h3>
+                                <p>Design moderado, funcionalidades padrão</p>
+                            </div>
+                        </label>
+                        
+                        <label class="complexity-card">
+                            <input type="radio" name="complexity" value="complex" data-multiplier="1.5">
+                            <div class="card-content">
+                                <h3>🟠 Complexo</h3>
+                                <p>Design avançado, muitas funcionalidades</p>
+                            </div>
+                        </label>
+                        
+                        <label class="complexity-card">
+                            <input type="radio" name="complexity" value="enterprise" data-multiplier="2">
+                            <div class="card-content">
+                                <h3>🔴 Enterprise</h3>
+                                <p>Altamente customizado, integrações</p>
+                            </div>
+                        </label>
+                    </div>
+                </section>
+
+                <!-- Extras -->
+                <section class="form-section">
+                    <h2>🎁 Recursos Extras</h2>
+                    <div class="extras-grid">
+                        <label class="extra-item">
+                            <input type="checkbox" name="extras" value="seo" data-price="500">
+                            <span class="checkmark"></span>
+                            <div class="extra-content">
+                                <h4>🎯 SEO Otimização</h4>
+                                <p>+R$ 500</p>
+                            </div>
+                        </label>
+                        
+                        <label class="extra-item">
+                            <input type="checkbox" name="extras" value="cms" data-price="800">
+                            <span class="checkmark"></span>
+                            <div class="extra-content">
+                                <h4>📝 Sistema CMS</h4>
+                                <p>+R$ 800</p>
+                            </div>
+                        </label>
+                        
+                        <label class="extra-item">
+                            <input type="checkbox" name="extras" value="analytics" data-price="300">
+                            <span class="checkmark"></span>
+                            <div class="extra-content">
+                                <h4>📊 Analytics</h4>
+                                <p>+R$ 300</p>
+                            </div>
+                        </label>
+                        
+                        <label class="extra-item">
+                            <input type="checkbox" name="extras" value="responsive" data-price="400">
+                            <span class="checkmark"></span>
+                            <div class="extra-content">
+                                <h4>📱 Design Responsivo Premium</h4>
+                                <p>+R$ 400</p>
+                            </div>
+                        </label>
+                        
+                        <label class="extra-item">
+                            <input type="checkbox" name="extras" value="api" data-price="1200">
+                            <span class="checkmark"></span>
+                            <div class="extra-content">
+                                <h4>🔌 Integração API</h4>
+                                <p>+R$ 1.200</p>
+                            </div>
+                        </label>
+                        
+                        <label class="extra-item">
+                            <input type="checkbox" name="extras" value="maintenance" data-price="600">
+                            <span class="checkmark"></span>
+                            <div class="extra-content">
+                                <h4>🔧 3 Meses Manutenção</h4>
+                                <p>+R$ 600</p>
+                            </div>
+                        </label>
+                    </div>
+                </section>
+
+                <!-- Configurações Profissionais -->
+                <section class="form-section">
+                    <h2>👨‍💼 Configurações Profissionais</h2>
+                    <div class="professional-settings">
+                        <div class="input-group">
+                            <label for="hourlyRate">💵 Valor Hora (R$)</label>
+                            <input type="number" id="hourlyRate" name="hourlyRate" value="75" min="20" max="300">
+                        </div>
+                        
+                        <div class="input-group">
+                            <label for="experienceLevel">🎖️ Nível de Experiência</label>
+                            <select id="experienceLevel" name="experienceLevel">
+                                <option value="junior" data-multiplier="0.8">Júnior (0-2 anos)</option>
+                                <option value="pleno" data-multiplier="1" selected>Pleno (2-5 anos)</option>
+                                <option value="senior" data-multiplier="1.3">Sênior (5+ anos)</option>
+                                <option value="specialist" data-multiplier="1.6">Especialista (10+ anos)</option>
+                            </select>
+                        </div>
+                        
+                        <div class="input-group">
+                            <label for="deadline">⏰ Prazo (dias)</label>
+                            <input type="number" id="deadline" name="deadline" value="30" min="1" max="365">
+                        </div>
+                        
+                        <div class="input-group">
+                            <label for="rush">🚀 Projeto Urgente?</label>
+                            <select id="rush" name="rush">
+                                <option value="normal" data-multiplier="1">Prazo Normal</option>
+                                <option value="rush" data-multiplier="1.3">Urgente (+30%)</option>
+                                <option value="emergency" data-multiplier="1.6">Emergência (+60%)</option>
+                            </select>
+                        </div>
+                    </div>
+                </section>
+
+                <button type="submit" class="calculate-btn">
+                    🧮 Calcular Orçamento
+                </button>
+            </form>
+
+            <!-- Resultado -->
+            <div id="result" class="result-section hidden">
+                <div class="result-card">
+                    <h2>📋 Orçamento Calculado</h2>
+                    
+                    <div class="result-summary">
+                        <div class="price-display">
+                            <span class="price-label">Valor Total:</span>
+                            <span id="totalPrice" class="total-price">R$ 0,00</span>
+                        </div>
+                        
+                        <div class="price-range">
+                            <span>Faixa: R$ <span id="minPrice">0</span> - R$ <span id="maxPrice">0</span></span>
+                        </div>
+                    </div>
+                    
+                    <div class="result-breakdown">
+                        <h3>📊 Detalhamento</h3>
+                        <div id="breakdown" class="breakdown-list"></div>
+                    </div>
+                    
+                    <div class="result-info">
+                        <div class="info-item">
+                            <strong>⏱️ Tempo Estimado:</strong>
+                            <span id="estimatedTime">0 horas</span>
+                        </div>
+                        <div class="info-item">
+                            <strong>📅 Prazo Sugerido:</strong>
+                            <span id="suggestedDeadline">0 dias</span>
+                        </div>
+                        <div class="info-item">
+                            <strong>💰 Valor por Hora:</strong>
+                            <span id="effectiveHourlyRate">R$ 0/hora</span>
+                        </div>
+                    </div>
+                    
+                    <div class="action-buttons">
+                        <button id="generateProposal" class="btn-secondary">📄 Gerar Proposta</button>
+                        <button id="shareResult" class="btn-secondary">🔗 Compartilhar</button>
+                        <button id="newCalculation" class="btn-primary">🔄 Novo Cálculo</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Proposta Gerada -->
+            <div id="proposal" class="proposal-section hidden">
+                <div class="proposal-card">
+                    <h2>📄 Proposta Comercial</h2>
+                    <div id="proposalContent" class="proposal-content"></div>
+                    <div class="proposal-actions">
+                        <button id="copyProposal" class="btn-primary">📋 Copiar Proposta</button>
+                        <button id="backToResult" class="btn-secondary">← Voltar</button>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer class="footer">
+            <p>💡 <strong>Dica:</strong> Sempre considere o valor agregado do seu trabalho e a qualidade da entrega!</p>
+        </footer>
+    </div>
+</body>
+</html>
